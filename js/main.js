@@ -141,4 +141,13 @@ $(document).ready(() => {
         theme.attr('href', 'css/blue.css');
     }
 
+    // Scroll to up
+    $('.subir').click((event) => {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+    });
+
 });
