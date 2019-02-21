@@ -101,5 +101,44 @@ $(document).ready(() => {
         $('#posts').append(post);
     });
 
+    // Switch themes
+    var theme = $('#theme');
+    
+    $('#to-green').click(() => {
+        toGreen();
+        localStorage.setItem('color', 'green');
+    });
+
+    $('#to-red').click(() => {
+        toRed();
+        localStorage.setItem('color', 'red');
+    });
+
+    $('#to-blue').click(() => {
+        toBlue();
+        localStorage.setItem('color', 'blue');
+    });
+
+    var color_pick = localStorage.getItem('color');
+
+    if(color_pick == 'red') {
+        toRed();
+    } else if(color_pick == 'blue') {
+        toBlue();
+    } else {
+        toGreen();
+    }
+
+    function toGreen() {
+        theme.attr('href', 'css/green.css');
+    }
+
+    function toRed() {
+        theme.attr('href', 'css/red.css');
+    }
+
+    function toBlue() {
+        theme.attr('href', 'css/blue.css');
+    }
 
 });
