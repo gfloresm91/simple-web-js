@@ -14,14 +14,12 @@
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Slider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <!-- Jquery UI -->
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css" />
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css" />
+    <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
 
-    <!-- Moment.js  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
-    
     <!-- Scripts js -->
     <script src="js/main.js"></script>
 </head>
@@ -33,7 +31,7 @@
         <div id="to-red"></div>
         <div id="to-blue"></div>
     </div>
-    
+
     <section id="main">
 
         <!-- Cabecera -->
@@ -54,21 +52,45 @@
             </nav>
         </header>
 
-        <!-- Slider -->
-        <div id="slider">
-            <div class="bxslider">
-                <div><img src="img/hojas.jpg" title="Hojas"></div>
-                <div><img src="img/rojo.jpg" title="Rojo"></div>
-                <div><img src="img/cielo.jpg" title="Cielo"></div>
-            </div>
-        </div>
-
         <!-- Contenido -->
         <section id="content">
-            
-            <!-- Load posts from JSON in main.js -->
-            <div id="posts"></div>
-            
+
+            <!-- Load acordeon -->
+            <div id="box">
+                <h2>Acerca de mí</h2>
+                <div id="acordeon">
+                    <h3>¿Quiénes somos?</h3>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Praesentium asperiores ab, quod unde eaque similique quae
+                            est eum. Eligendi itaque alias ad neque ullam modi culpa
+                            fugiat earum! Inventore, perferendis.
+                        </p>
+                    </div>
+
+                    <h3>Nuestros servicios</h3>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Praesentium asperiores ab, quod unde eaque similique quae
+                            est eum. Eligendi itaque alias ad neque ullam modi culpa
+                            fugiat earum! Inventore, perferendis.
+                        </p>
+                    </div>
+
+                    <h3>Nuestros clientes</h3>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Praesentium asperiores ab, quod unde eaque similique quae
+                            est eum. Eligendi itaque alias ad neque ullam modi culpa
+                            fugiat earum! Inventore, perferendis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <aside id="sidebar">
                 <div id="about">
                     <h4><span>Acerca de mi</span></h4>

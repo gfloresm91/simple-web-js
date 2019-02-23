@@ -1,18 +1,21 @@
 $(document).ready(() => {
 
     // Slider
-    $('.bxslider').bxSlider({
-        mode: 'fade',
-        captions: true,
-        slideWidth: 1200,
-        responsive: true
-    });
+    if (window.location.href.indexOf('index') > -1) {
+        $('.bxslider').bxSlider({
+            mode: 'fade',
+            captions: true,
+            slideWidth: 1200,
+            responsive: true
+        });
+    }
 
     // Posts
-    var posts = [{
-            title: 'Prueba título 1',
-            date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
-            content: `
+    if (window.location.href.indexOf('index') > -1) {
+        var posts = [{
+                title: 'Prueba título 1',
+                date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
+                content: `
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
                 voluptate consequatur sapiente quasi, aspernatur minima ipsam
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
@@ -26,11 +29,11 @@ $(document).ready(() => {
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
                 numquam, quo voluptatibus delectus?
             `
-        },
-        {
-            title: 'Prueba título 2',
-            date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
-            content: `
+            },
+            {
+                title: 'Prueba título 2',
+                date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
+                content: `
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
                 voluptate consequatur sapiente quasi, aspernatur minima ipsam
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
@@ -44,11 +47,11 @@ $(document).ready(() => {
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
                 numquam, quo voluptatibus delectus?
             `
-        },
-        {
-            title: 'Prueba título 3',
-            date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
-            content: `
+            },
+            {
+                title: 'Prueba título 3',
+                date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
+                content: `
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
                 voluptate consequatur sapiente quasi, aspernatur minima ipsam
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
@@ -62,11 +65,11 @@ $(document).ready(() => {
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
                 numquam, quo voluptatibus delectus?
             `
-        },
-        {
-            title: 'Prueba título 4',
-            date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
-            content: `
+            },
+            {
+                title: 'Prueba título 4',
+                date: `Publicado el: ${moment().format('DD/MM/YYYY')}`,
+                content: `
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
                 voluptate consequatur sapiente quasi, aspernatur minima ipsam
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
@@ -80,11 +83,11 @@ $(document).ready(() => {
                 voluptatum aut quia, ad at? Laborum facere eaque eligendi rerum
                 numquam, quo voluptatibus delectus?
             `
-        }
-    ];
+            }
+        ];
 
-    posts.forEach((item) => {
-        var post = `
+        posts.forEach((item) => {
+            var post = `
             <article class="post">
                 <h2>${item.title}</h2>
                 <span class="date">${item.date}</span>
@@ -98,12 +101,13 @@ $(document).ready(() => {
             </article>
         `;
 
-        $('#posts').append(post);
-    });
+            $('#posts').append(post);
+        });
+    }
 
     // Switch themes
     var theme = $('#theme');
-    
+
     $('#to-green').click(() => {
         toGreen();
         localStorage.setItem('color', 'green');
@@ -121,9 +125,9 @@ $(document).ready(() => {
 
     var color_pick = localStorage.getItem('color');
 
-    if(color_pick == 'red') {
+    if (color_pick == 'red') {
         toRed();
-    } else if(color_pick == 'blue') {
+    } else if (color_pick == 'blue') {
         toBlue();
     } else {
         toGreen();
@@ -159,7 +163,7 @@ $(document).ready(() => {
 
     var form_name = localStorage.getItem('form_name');
 
-    if(form_name != null && form_name != 'undefined') {
+    if (form_name != null && form_name != 'undefined') {
         var about_parrafo = $('#about p');
 
         about_parrafo.html(`<br> <strong>Bienvenido: ${form_name}</strong>`);
@@ -170,6 +174,10 @@ $(document).ready(() => {
             localStorage.clear();
             location.reload();
         });
+    }
+
+    if (window.location.href.indexOf('about') > -1) {
+        $('#acordeon').accordion();
     }
 
 });
